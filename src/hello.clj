@@ -3,12 +3,17 @@
   (:import [javax.swing WindowConstants])
   (:import [org.bytedeco.opencv.global opencv_imgcodecs]))
 
-(defn -main[& args]
-    (let[ marcel (opencv_imgcodecs/imread "marcel.jpg")
+(defn baby-steps[filepath]
+  (let[ marcel (opencv_imgcodecs/imread filepath)
           converter (OpenCVFrameConverter$ToMat.)
           canvas (CanvasFrame. "Marcel")
           _ (.setDefaultCloseOperation canvas WindowConstants/EXIT_ON_CLOSE)
           ]
     (.showImage canvas (.convert converter marcel))))
 
-; (-main)
+(defn -main[& args]
+   (baby-steps (first args)))
+
+  (comment 
+    (baby-steps "marcel.jpg")
+    )

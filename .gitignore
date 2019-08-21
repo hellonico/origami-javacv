@@ -5,3 +5,6 @@ target
 .project
 .settings/
 bin
+build
+.vscode
+.ipynb_checkpoints/

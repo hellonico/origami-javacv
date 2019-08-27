@@ -12,8 +12,9 @@
     (.showImage canvas (.convert converter marcel))))
 
 (defn -main[& args]
-   (baby-steps (first args)))
+   (baby-steps (or (first args) "marcel.jpg")))
 
+  
   (comment 
     (baby-steps "marcel.jpg")
     )

@@ -1,19 +1,10 @@
 (ns webcam
-(:import [org.bytedeco.javacv CanvasFrame])
-(:import [org.bytedeco.javacv FrameGrabber]))
+  (:import [org.bytedeco.javacv FrameGrabber CanvasFrame]))
 
-(defn -main[& args]
-    (let [ grabber (FrameGrabber/createDefault 0)
-        ;    canvas (CanvasFrame. "Webcam")
-        canvas (CanvasFrame. "Marcel" 0 nil)
-           ]
+(defn -main [& args]
+  (let [grabber (FrameGrabber/createDefault 0)
+        canvas (if (first args) (CanvasFrame. "Marcel" 0 nil) (CanvasFrame. "Webcam")) ]
     (.start grabber)
     (while (.isVisible canvas)
-       (.showImage canvas (.grab grabber)))
+      (.showImage canvas (.grab grabber)))
     (.close grabber)))
-
-
-(comment
-    (-main)
-    
-    )

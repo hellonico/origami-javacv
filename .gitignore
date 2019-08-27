@@ -8,3 +8,13 @@ bin
 build
 .vscode
 .ipynb_checkpoints/
+.idea/
+.lein-repl-history
+detected.jpg
+detected_clj.jpg
+javacvj.iml
+output.jpg
+thresh.jpg
+thresh2.jpg
+thresh_clj.jpg
+

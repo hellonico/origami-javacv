@@ -4,14 +4,14 @@ Original goal was to check the difference of speed between standard compiled Ope
 I also originally thought JavaCV was compiling OpenCV with Gpu bindings, **it is not**.
 
 
-
-
 # more relevant javacv samples
 
 http://bytedeco.org/news/2015/04/04/javacv-frame-converters/
 https://github.com/bytedeco/javacv/blob/master/samples/ImageSegmentation.java
 
 # Installation.
+
+# extra libraries missing on modern raspbian ...
 
 Things that were missing on the raspberry pi
 
@@ -23,15 +23,20 @@ apt install libgfortran3
 
 ```
 pip install jupyter
+```
 
-# clojure jupyter setup
+## extra clojure jupyter setup
 
+```
 ## install leiningen
 ## https://leiningen.org/#install
-export LEIN_WORKING_DIRECTORY=$PWD
-lein jupyter install-kernel
 
-# java jupyter setup
+lein jupyter install-kernel
+```
+
+##  extra java jupyter setup
+
+```
 # download: https://github.com/SpencerPark/IJava/releases
 wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
 unzip  ijava-1.3.0.zip
@@ -46,7 +51,8 @@ sudo update-alternatives --set java /usr/lib/jvm/java-11-openjdk-armhf/bin/java
 ```
 
 
-now check kernels are installed
+now check the java and clojure kernels are installed:
+
 ```
 pi@raspberrypi:~/Downloads $ jupyter kernelspec list 
 Available kernels:
@@ -56,7 +62,7 @@ Available kernels:
 ```
 
 ```
-# start notebook
+# start the notebook on a given ip
+export LEIN_WORKING_DIRECTORY=$PWD
 jupyter notebook --ip=0.0.0.0
-
 ```

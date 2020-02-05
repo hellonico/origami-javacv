@@ -18,6 +18,4 @@
   :dependencies [
     ; don't use [org.clojure/clojure "1.10.0"]
     [org.clojure/clojure "1.10.1"]
-                  [org.bytedeco/javacv-platform "1.5.1"]
-                ;  [origami/origami "4.1.2"]
-                 ])
+                  [org.bytedeco/javacv-platform "1.5.2"]])
